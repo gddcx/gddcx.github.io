@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="#Windows 上安装的MySQL重置密码    重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：    &amp;gt;删除my.ini文件指定的data文件夹    &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹    &amp;gt;输入命令 mysqld –initialize –console    &amp;gt;&amp;gt;命令完成后会重新生成data文件夹">
+<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹 &amp;gt;输入命令 mysqld --initialize --console &amp;gt;命令完成后会重新生成data文件夹，命令行窗口会给">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL重置密码">
 <meta property="og:url" content="http://yoursite.com/2018/10/12/MySQL重置密码/index.html">
 <meta property="og:site_name" content="邓长兴的个人博客">
-<meta property="og:description" content="#Windows 上安装的MySQL重置密码    重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：    &amp;gt;删除my.ini文件指定的data文件夹    &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹    &amp;gt;输入命令 mysqld –initialize –console    &amp;gt;&amp;gt;命令完成后会重新生成data文件夹">
+<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹 &amp;gt;输入命令 mysqld --initialize --console &amp;gt;命令完成后会重新生成data文件夹，命令行窗口会给">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-12T07:39:25.701Z">
+<meta property="og:updated_time" content="2018-10-12T07:42:54.003Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL重置密码">
-<meta name="twitter:description" content="#Windows 上安装的MySQL重置密码    重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：    &amp;gt;删除my.ini文件指定的data文件夹    &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹    &amp;gt;输入命令 mysqld –initialize –console    &amp;gt;&amp;gt;命令完成后会重新生成data文件夹">
+<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;在命令行窗口进入MySQL目录下的bin文件夹 &amp;gt;输入命令 mysqld --initialize --console &amp;gt;命令完成后会重新生成data文件夹，命令行窗口会给">
 
 
 
@@ -321,8 +321,15 @@
       
 
       
-        <p>#Windows 上安装的MySQL重置密码<br>    重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：<br><br>    &gt;删除my.ini文件指定的data文件夹<br>    &gt;在命令行窗口进入MySQL目录下的bin文件夹<br>    &gt;输入命令 mysqld –initialize –console<br>    &gt;&gt;命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br>    &gt;这时MySQL是没有启动的，输入命令 net start mysql 启动MySQL，可以用命令sc query mysql 查看MySQL的状态<br>    &gt;然后是登录MySQL，命令mysql -uroot -p，输入刚才得到的初始密码就ok了<br>    &gt;这时候还不能使用MySQL，你要先更改密码才行</p>
-
+        <h2 id="Windows-上安装的MySQL重置密码"><a href="#Windows-上安装的MySQL重置密码" class="headerlink" title="Windows 上安装的MySQL重置密码"></a>Windows 上安装的MySQL重置密码</h2><pre><code>重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&lt;br/&gt;
+&gt;删除my.ini文件指定的data文件夹
+&gt;在命令行窗口进入MySQL目录下的bin文件夹
+&gt;输入命令 mysqld --initialize --console
+&gt;命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码
+&gt;这时MySQL是没有启动的，输入命令 net start mysql 启动MySQL，可以用命令sc query mysql 查看MySQL的状态
+&gt;然后是登录MySQL，命令mysql -uroot -p，输入刚才得到的初始密码就ok了
+&gt;这时候还不能使用MySQL，你要先更改密码才行
+</code></pre>
       
     </div>
     
@@ -390,8 +397,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -442,6 +458,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-上安装的MySQL重置密码"><span class="nav-number">1.</span> <span class="nav-text">Windows 上安装的MySQL重置密码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
