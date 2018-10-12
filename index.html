@@ -326,7 +326,9 @@
 <p>删除my.ini文件指定的data文件夹</p>
 <p>在命令行窗口进入MySQL目录下的bin文件夹，输入命令<br>    mysqld –initialize –console<br><img src="/_posts/MySQL重置密码/changepasswd1.png" alt=""></p>
 <p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br><img src="/_posts/MySQL重置密码/changepasswd2.png" alt=""></p>
-<p>这时MySQL是没有启动的，启动MySQL<br>    net start mysql<br>可以用命令查看MySQL的状态<br>    sc query mysql </p>
+<p>这时MySQL是没有启动的，启动MySQL </p>
+<pre><code>net start mysql 
+</code></pre><p>可以用命令查看MySQL的状态<br>    sc query mysql </p>
 <p>然后是登录MySQL，<br>    mysql -uroot -p<br>输入刚才得到的初始密码就ok了</p>
 <p>这时候你还不能使用MySQL，需要先更改密码才行</p>
 <p>有两种命令:</p>
