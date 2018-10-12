@@ -326,8 +326,8 @@
 <p>删除my.ini文件指定的data文件夹</p>
 <p>在命令行窗口进入MySQL目录下的bin文件夹，输入命令 </p>
 <pre><code>mysqld --initialize --console
-</code></pre><p><img src="/_posts/MySQL重置密码/changepasswd1.png" alt=""></p>
-<p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br><img src="/_posts/MySQL重置密码/changepasswd2.png" alt=""></p>
+</code></pre><p><img src="/images/changepasswd1.png" alt=""></p>
+<p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br><img src="/images/changepasswd2.png" alt=""></p>
 <p>这时MySQL是没有启动的，启动MySQL </p>
 <pre><code>net start mysql 
 </code></pre><p>可以用命令查看MySQL的状态</p>
@@ -341,7 +341,7 @@
 <pre><code>SET PASSWORD FOR user@host = PASSWORD(&apos;new password&apos;)
 </code></pre><p>第二种是</p>
 <pre><code>ALTER USER user IDENTIFIED BY &apos;new password&apos;
-</code></pre><p>我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令<br><img src="/_posts/MySQL重置密码/changepasswd3.png" alt=""></p>
+</code></pre><p>我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令<br><img src="/images/changepasswd3.png" alt=""></p>
 <p>完成所有操作后，密码就重置成功啦~</p>
 
           
