@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，输入命令 net">
+<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令    mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动MyS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL重置密码">
 <meta property="og:url" content="http://yoursite.com/2018/10/12/MySQL重置密码/index.html">
 <meta property="og:site_name" content="邓长兴的个人博客">
-<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，输入命令 net">
+<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令    mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动MyS">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/changepasswd1">
-<meta property="og:updated_time" content="2018-10-12T07:58:02.799Z">
+<meta property="og:image" content="http://yoursite.com/images/changepasswd2">
+<meta property="og:image" content="http://yoursite.com/images/changepasswd3">
+<meta property="og:updated_time" content="2018-10-12T08:01:23.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL重置密码">
-<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，输入命令 net">
+<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令    mysqld –initialize –console 命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动MyS">
 <meta name="twitter:image" content="http://yoursite.com/images/changepasswd1">
 
 
@@ -325,18 +327,16 @@
       
         <h2 id="Windows-上安装的MySQL重置密码"><a href="#Windows-上安装的MySQL重置密码" class="headerlink" title="Windows 上安装的MySQL重置密码"></a>Windows 上安装的MySQL重置密码</h2><p>重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：<br></p>
 <p>删除my.ini文件指定的data文件夹</p>
-<p>在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld –initialize –console<br><img src="/images/changepasswd1" alt=""></p>
-<p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码</p>
-<p>这时MySQL是没有启动的，输入命令 net start mysql 启动MySQL，可以用命令sc query mysql 查看MySQL的状态</p>
-<p>然后是登录MySQL，命令mysql -uroot -p，输入刚才得到的初始密码就ok了</p>
+<p>在命令行窗口进入MySQL目录下的bin文件夹，输入命令<br>    mysqld –initialize –console<br><img src="/images/changepasswd1" alt=""></p>
+<p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br><img src="/images/changepasswd2" alt=""></p>
+<p>这时MySQL是没有启动的，启动MySQL<br>    net start mysql<br>可以用命令查看MySQL的状态<br>    sc query mysql </p>
+<p>然后是登录MySQL，<br>    mysql -uroot -p<br>输入刚才得到的初始密码就ok了</p>
 <p>这时候你还不能使用MySQL，需要先更改密码才行</p>
 <p>有两种命令:</p>
-<pre><code>第一种是SET PASSWORD FOR user@host = PASSWORD(&apos;new password&apos;)
-
-第二种是ALTER USER user IDENTIFIED BY &apos;new password&apos;
-
-我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令
-</code></pre><p>完成所有操作后，密码就重置成功啦~</p>
+<p>第一种是<br>    SET PASSWORD FOR user@host = PASSWORD(‘new password’)</p>
+<p>第二种是<br>    ALTER USER user IDENTIFIED BY ‘new password’</p>
+<p>我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令<br><img src="/images/changepasswd3" alt=""></p>
+<p>完成所有操作后，密码就重置成功啦~</p>
 
       
     </div>
