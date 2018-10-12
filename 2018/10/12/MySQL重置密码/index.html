@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](D:\Hexo\source\pictures) &amp;gt;命">
+<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt;  删除my.ini文件指定的data文件夹  ![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](/images/changepasswd1)  命令完成后会重新生成da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL重置密码">
 <meta property="og:url" content="http://yoursite.com/2018/10/12/MySQL重置密码/index.html">
 <meta property="og:site_name" content="邓长兴的个人博客">
-<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](D:\Hexo\source\pictures) &amp;gt;命">
+<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt;  删除my.ini文件指定的data文件夹  ![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](/images/changepasswd1)  命令完成后会重新生成da">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-12T07:52:18.020Z">
+<meta property="og:updated_time" content="2018-10-12T07:56:07.967Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL重置密码">
-<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt; &amp;gt;删除my.ini文件指定的data文件夹 &amp;gt;![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](D:\Hexo\source\pictures) &amp;gt;命">
+<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&amp;lt;br/&amp;gt;  删除my.ini文件指定的data文件夹  ![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](/images/changepasswd1)  命令完成后会重新生成da">
 
 
 
@@ -322,16 +322,27 @@
 
       
         <h2 id="Windows-上安装的MySQL重置密码"><a href="#Windows-上安装的MySQL重置密码" class="headerlink" title="Windows 上安装的MySQL重置密码"></a>Windows 上安装的MySQL重置密码</h2><pre><code>重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：&lt;br/&gt;
-&gt;删除my.ini文件指定的data文件夹
-&gt;![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](D:\Hexo\source\pictures)
-&gt;命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码
-&gt;这时MySQL是没有启动的，输入命令 net start mysql 启动MySQL，可以用命令sc query mysql 查看MySQL的状态
-&gt;然后是登录MySQL，命令mysql -uroot -p，输入刚才得到的初始密码就ok了
-&gt;这时候你还不能使用MySQL，需要先更改密码才行
-&gt;有两种命令:
+
+删除my.ini文件指定的data文件夹
+
+![在命令行窗口进入MySQL目录下的bin文件夹，输入命令 mysqld --initialize --console](/images/changepasswd1)
+
+命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码
+
+这时MySQL是没有启动的，输入命令 net start mysql 启动MySQL，可以用命令sc query mysql 查看MySQL的状态
+
+然后是登录MySQL，命令mysql -uroot -p，输入刚才得到的初始密码就ok了
+
+这时候你还不能使用MySQL，需要先更改密码才行
+
+有两种命令:
+
     第一种是SET PASSWORD FOR user@host = PASSWORD(&apos;new password&apos;)
+
     第二种是ALTER USER user IDENTIFIED BY &apos;new password&apos;
+
     我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令
+
 完成所有操作后，密码就重置成功啦~
 </code></pre>
       
