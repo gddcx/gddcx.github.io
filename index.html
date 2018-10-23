@@ -323,7 +323,9 @@
         
           
             <h2 id="Windows和Linux服务器互传文件"><a href="#Windows和Linux服务器互传文件" class="headerlink" title="Windows和Linux服务器互传文件"></a>Windows和Linux服务器互传文件</h2><p>今天准备在阿里云上部署后端，因为是新创建的实例，还没有jdk，就wget了一个，结果很坑啊！<br>wget下来的包根本就解压不了！<br><img src="/images/winlinux1.jpg" alt=""><br>网上说，是因为Oracle下载jdk时需要先选择Accept，所以用wget就出问题了（不清楚为什么啊）。<br>所以只好现在linux下载再上传到linux服务器咯<br>linux和linux之间传文件很简单，使用scp命令就可以了，但是windows和linux之间传文件就触及我的知识盲区了！<br>赶紧学习了一下</p>
-<h2 id="使用XShell6："><a href="#使用XShell6：" class="headerlink" title="使用XShell6："></a>使用XShell6：</h2><p>1.先连接到你的服务器<br>2.点击新建文件传输，也可以之间用ctrl+alt+F，会弹出界面要你下载xftp点击取消就ok了<br><img src="/images/winlinux2.jpg" alt=""><br>3.输入lcd path输入上传文件的路径(我的jdk下载在f盘)<br><img src="/images/winlinux3.jpg" alt=""><br>4.输入命令，~是我linux上的目录啦<br>    put f:\jdk-8u191-linux-x64.rpm ~<br><img src="/images/winlinux4.jpg" alt=""><br>5.等待！ok</p>
+<h2 id="使用XShell6："><a href="#使用XShell6：" class="headerlink" title="使用XShell6："></a>使用XShell6：</h2><p>1.先连接到你的服务器<br>2.点击新建文件传输，也可以之间用ctrl+alt+F，会弹出界面要你下载xftp点击取消就ok了<br><img src="/images/winlinux2.jpg" alt=""><br>这时sftp:后面会有一个目录，就是你账号现在所在的目录，文件会传到这个目录来<br>3.输入lcd，就会弹出一个文件选择界面，选择你将要上传的文件的目录<br><img src="/images/winlinux3.jpg" alt=""><br>4.输入</p>
+<pre><code>put jdk-8u191-linux-x64.rpm
+</code></pre><p>put 后接你要上传的文件名（目录刚才已经选择了），就会将文件put到sftp后面的目录啦<br><img src="/images/winlinux4.jpg" alt=""><br>5.等待！ok</p>
 
           
         
