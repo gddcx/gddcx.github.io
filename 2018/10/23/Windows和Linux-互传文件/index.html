@@ -90,7 +90,9 @@
 <meta property="og:image" content="http://yoursite.com/images/winlinux2.jpg">
 <meta property="og:image" content="http://yoursite.com/images/winlinux3.jpg">
 <meta property="og:image" content="http://yoursite.com/images/winlinux4.jpg">
-<meta property="og:updated_time" content="2018-10-23T08:14:16.922Z">
+<meta property="og:image" content="http://yoursite.com/images/winlinux5.jpg">
+<meta property="og:image" content="http://yoursite.com/images/winlinux6.jpg">
+<meta property="og:updated_time" content="2018-11-16T16:32:03.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows和Linux 互传文件">
 <meta name="twitter:description" content="Windows和Linux服务器互传文件今天准备在阿里云上部署后端，因为是新创建的实例，还没有jdk，就wget了一个，结果很坑啊！wget下来的包根本就解压不了！网上说，是因为Oracle下载jdk时需要先选择Accept，所以用wget就出问题了（不清楚为什么啊）。所以只好现在linux下载再上传到linux服务器咯linux和linux之间传文件很简单，使用scp命令就可以了，但是windo">
@@ -340,6 +342,7 @@
 <h2 id="使用XShell6："><a href="#使用XShell6：" class="headerlink" title="使用XShell6："></a>使用XShell6：</h2><p>1.先连接到你的服务器<br>2.点击新建文件传输，也可以之间用ctrl+alt+F，会弹出界面要你下载xftp点击取消就ok了<br><img src="/images/winlinux2.jpg" alt=""><br>这时sftp:后面会有一个目录，就是你账号现在所在的目录，文件会传到这个目录来<br>3.输入lcd，就会弹出一个文件选择界面，选择你将要上传的文件的目录<br><img src="/images/winlinux3.jpg" alt=""><br>4.输入</p>
 <pre><code>put jdk-8u191-linux-x64.rpm
 </code></pre><p>put 后接你要上传的文件名（目录刚才已经选择了），就会将文件put到sftp后面的目录啦<br><img src="/images/winlinux4.jpg" alt=""><br>5.等待！ok</p>
+<h2 id="使用winSCP"><a href="#使用winSCP" class="headerlink" title="使用winSCP"></a>使用winSCP</h2><p>这个操作就很简单了，下载一个winSCP，安装一下<br>选择sFTP文件协议，输入主机、端口、用户、密码<br><img src="/images/winlinux5.jpg" alt=""><br>连接成功后，只要把文件拖来拖去就可以实现上传或者下载了<br><img src="/images/winlinux6.jpg" alt=""></p>
 
       
     </div>
@@ -373,6 +376,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/30/Winform-C-使用Mysql/" rel="prev" title="在Winform C++中使用">
+                在Winform C++中使用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -456,7 +463,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -467,7 +474,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
@@ -502,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows和Linux服务器互传文件"><span class="nav-number">1.</span> <span class="nav-text">Windows和Linux服务器互传文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用XShell6："><span class="nav-number">2.</span> <span class="nav-text">使用XShell6：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows和Linux服务器互传文件"><span class="nav-number">1.</span> <span class="nav-text">Windows和Linux服务器互传文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用XShell6："><span class="nav-number">2.</span> <span class="nav-text">使用XShell6：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用winSCP"><span class="nav-number">3.</span> <span class="nav-text">使用winSCP</span></a></li></ol></div>
             
 
           </div>

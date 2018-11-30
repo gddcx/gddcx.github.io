@@ -79,21 +79,24 @@
 
 
 
-<meta name="description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令  mysqld --initialize --console  命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动My">
+<meta name="description" content="环境在VS中使用C++开发Winform使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件因此VS中项目平台也要选择64位：右击选择 属性没有x64平台的话就点击 配置管理器 进行新建 在 项目-&amp;gt;属性 中进行必要的配置选择 C/C++-&amp;gt;常规，在 附加包含目录中添加 MySQL/include 的路径选择 链接器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL重置密码">
-<meta property="og:url" content="http://yoursite.com/2018/10/12/MySQL重置密码/index.html">
+<meta property="og:title" content="在Winform C++中使用">
+<meta property="og:url" content="http://yoursite.com/2018/11/30/Winform-C-使用Mysql/index.html">
 <meta property="og:site_name" content="Deng Changxing">
-<meta property="og:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令  mysqld --initialize --console  命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动My">
+<meta property="og:description" content="环境在VS中使用C++开发Winform使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件因此VS中项目平台也要选择64位：右击选择 属性没有x64平台的话就点击 配置管理器 进行新建 在 项目-&amp;gt;属性 中进行必要的配置选择 C/C++-&amp;gt;常规，在 附加包含目录中添加 MySQL/include 的路径选择 链接器">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/changepasswd1.png">
-<meta property="og:image" content="http://yoursite.com/images/changepasswd2.png">
-<meta property="og:image" content="http://yoursite.com/images/changepasswd3.png">
-<meta property="og:updated_time" content="2018-10-12T08:13:22.329Z">
+<meta property="og:image" content="http://yoursite.com/images/2018113001">
+<meta property="og:image" content="http://yoursite.com/images/2018113002">
+<meta property="og:image" content="http://yoursite.com/images/2018113003">
+<meta property="og:image" content="http://yoursite.com/images/2018113004">
+<meta property="og:image" content="http://yoursite.com/images/2018113005">
+<meta property="og:image" content="http://yoursite.com/images/2018113006">
+<meta property="og:updated_time" content="2018-11-30T14:45:46.387Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL重置密码">
-<meta name="twitter:description" content="Windows 上安装的MySQL重置密码重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下： 删除my.ini文件指定的data文件夹 在命令行窗口进入MySQL目录下的bin文件夹，输入命令  mysqld --initialize --console  命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码 这时MySQL是没有启动的，启动My">
-<meta name="twitter:image" content="http://yoursite.com/images/changepasswd1.png">
+<meta name="twitter:title" content="在Winform C++中使用">
+<meta name="twitter:description" content="环境在VS中使用C++开发Winform使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件因此VS中项目平台也要选择64位：右击选择 属性没有x64平台的话就点击 配置管理器 进行新建 在 项目-&amp;gt;属性 中进行必要的配置选择 C/C++-&amp;gt;常规，在 附加包含目录中添加 MySQL/include 的路径选择 链接器">
+<meta name="twitter:image" content="http://yoursite.com/images/2018113001">
 
 
 
@@ -123,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/12/MySQL重置密码/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/30/Winform-C-使用Mysql/"/>
 
 
 
 
 
-  <title>MySQL重置密码 | Deng Changxing</title>
+  <title>在Winform C++中使用 | Deng Changxing</title>
   
 
 
@@ -236,7 +239,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/MySQL重置密码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Winform-C-使用Mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dengcx">
@@ -253,7 +256,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL重置密码</h1>
+          <h1 class="post-title" itemprop="name headline">在Winform C++中使用</h1>
         
 
         <div class="post-meta">
@@ -265,8 +268,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-12T15:13:01+08:00">
-                2018-10-12
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T21:02:35+08:00">
+                2018-11-30
               </time>
             
 
@@ -288,8 +291,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQl/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQl</span>
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
                   </a>
                 </span>
 
@@ -306,8 +309,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/10/12/MySQL重置密码/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/10/12/MySQL重置密码/" itemprop="commentsCount"></span>
+                <a href="/2018/11/30/Winform-C-使用Mysql/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/11/30/Winform-C-使用Mysql/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -335,27 +338,39 @@
       
 
       
-        <h2 id="Windows-上安装的MySQL重置密码"><a href="#Windows-上安装的MySQL重置密码" class="headerlink" title="Windows 上安装的MySQL重置密码"></a>Windows 上安装的MySQL重置密码</h2><p>重置密码的方法比较粗暴，其实就是重新生成data文件夹,所以需要先对数据进行备份，步骤如下：<br></p>
-<p>删除my.ini文件指定的data文件夹</p>
-<p>在命令行窗口进入MySQL目录下的bin文件夹，输入命令 </p>
-<pre><code>mysqld --initialize --console
-</code></pre><p><img src="/images/changepasswd1.png" alt=""></p>
-<p>命令完成后会重新生成data文件夹，命令行窗口会给出初始化密码<br><img src="/images/changepasswd2.png" alt=""></p>
-<p>这时MySQL是没有启动的，启动MySQL </p>
-<pre><code>net start mysql 
-</code></pre><p>可以用命令查看MySQL的状态</p>
-<pre><code>sc query mysql 
-</code></pre><p>然后是登录MySQL，</p>
-<pre><code>mysql -uroot -p
-</code></pre><p>输入刚才得到的初始密码就ok了</p>
-<p>这时候你还不能使用MySQL，需要先更改密码才行</p>
-<p>有两种命令:</p>
-<p>第一种是</p>
-<pre><code>SET PASSWORD FOR user@host = PASSWORD(&apos;new password&apos;)
-</code></pre><p>第二种是</p>
-<pre><code>ALTER USER user IDENTIFIED BY &apos;new password&apos;
-</code></pre><p>我安装的是MySQL-8，使用第一种命令会报错，只能使用第二种命令，而我服务器上的MySQL-5就只能使用第一种命令<br><img src="/images/changepasswd3.png" alt=""></p>
-<p>完成所有操作后，密码就重置成功啦~</p>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>在VS中使用C++开发Winform<br>使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8<br>当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件<br>因此VS中项目平台也要选择64位：<br><img src="/images/2018113001" alt=""><br>右击选择 属性<br><img src="/images/2018113002" alt=""><br>没有x64平台的话就点击 配置管理器 进行新建</p>
+<h2 id="在-项目-gt-属性-中进行必要的配置"><a href="#在-项目-gt-属性-中进行必要的配置" class="headerlink" title="在 项目-&gt;属性 中进行必要的配置"></a>在 项目-&gt;属性 中进行必要的配置</h2><p><img src="/images/2018113003" alt=""><br>选择 C/C++-&gt;常规，在 附加包含目录中添加 MySQL/include 的路径<br><img src="/images/2018113004" alt=""><br>选择 链接器-&gt;常规 在 附加库目录中添加 MySQL/lib 路径<br><img src="/images/2018113005" alt=""><br>选择 链接器-&gt;输入 在附加依赖项中 输入 libmysql.lib<br><img src="/images/2018113006" alt=""><br>最后从MySQL/lib中取出libmysql.dll放在对应的x64/debug目录下（会有几个x64文件夹，放在.exe文件所在的那个）<br>基本到这里就完成了，不过我运行的时候还是很多莫名的错误：</p>
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>找不到libmysql.dll：<br>    我认为是版本问题，有可能vs识别不了MySQL8，因为我又下载了一个MySQL5，用MySQL5的libmysql.dll覆盖掉之前设置的dll就能运行了。<br>找不到一大堆.lib文件：<br>    是因为平台换到了x64，很多x64的库都找不到。<br>    解决办法是，在c:/Program Files中找到缺少的库文件（要注意是不是x64的），然后在 链接器-&gt;常规-&gt;附加库目录 中添加库文件路径就可以了。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>这是我的一个课程作业，所以只使用了一些基本的用法。<br>首先:</p>
+<pre><code>#include &quot;mysql.h&quot;
+</code></pre><p>然后声明一个MYSQL变量:</p>
+<pre><code>MYSQL mysql = new MYSQL;
+</code></pre><p>然后初始化mysql：</p>
+<pre><code>mysql_init(&amp;mysql);
+</code></pre><p>我在网上看到一篇文章认为，上面声明变量以及初始化时mysql的使用是正确的，相反下面的写法被认为是错误的：</p>
+<pre><code>MYSQL *mysql = new MYSQL;
+mysql_init(mysql);
+</code></pre><p>不过我开发这个winform使用的是托管类,第一种定义方法会报错，我使用了第二种，而且完全能够运行。<br>然后连接:</p>
+<pre><code>if(mysql_real_connect(mysql,host,username,passwd,database,port,NULL,0))
+</code></pre><p>port除非你设置了别的值，否则一般是3306，其余各个变量的意思都很清楚了。连接成功则返回true。<br>设置编码，当然如果你传输的全是ASCII编码字符就可以不设置了，我创建表时没有设置编码，中文默认是GBK：</p>
+<pre><code>mysql_query(mysql,&quot;SET NAMES ’GBK‘&quot;)；
+</code></pre><p>然后执行SQL语句:</p>
+<pre><code>int res = mysql_query(mysql,SQL语句);
+</code></pre><p>如果执行成功返回0，执行失败返回非0<br>查询结果：</p>
+<pre><code>MYSQL_RES * result = mysql_store_result(mysql);
+</code></pre><p>返回的结果是一个MSQL_RES*类型的值，可以直接用if(result)判断是否为空<br>获取结果：</p>
+<pre><code>while(MYSQL_ROW sql_row = mysql_fetch_row(result))
+</code></pre><p>每次执行while循环会返回数据表中的一条记录，可以把sql_row当做数组来使用(sql_row[0],sql_row[1]….)<br>就完了！</p>
+<p>当然还有一些小问题，例如声明变量的时候，如果用上面的方法</p>
+<pre><code>MYSQL *mysql = new MYSQL;
+</code></pre><p>我会出现的错误是：…..内存已损坏……大概就是内存溢出，当我改成:</p>
+<pre><code>MYSQL *mysql = new MYSQL[2];
+</code></pre><p>就不会出现这个问题。<br>还有一个问题就是，当我出现大量调用 创建连接 时，程序也会出现内存溢出的问题，网上一些回答是使用：</p>
+<pre><code>mysql_free_result(result);
+</code></pre><p>来解决，但是对我而言并没有效果，相反还会导致程序莫名退出<br>我的程序需要频繁地建立连接，运行一段时间之后还会报 内存损坏 ，不过现在无端端又好了，软件也靠不住啊~<br>不过还是在网上找了点关于这个问题的说法，大概就是接受的数据太多，处理不来，导致内存堆积，就溢出了….我也不确定<br>不过还是记下一个方法，方便以后查看：</p>
+<pre><code>mysql_close(mysql);
+mysql_library_end();
+</code></pre><p>据说前一步并没有完全释放内存，需要再添加后一条语句才能完全释放。</p>
 
       
     </div>
@@ -380,15 +395,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/10/23/Windows和Linux-互传文件/" rel="next" title="Windows和Linux 互传文件">
+                <i class="fa fa-chevron-left"></i> Windows和Linux 互传文件
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/23/Windows和Linux-互传文件/" rel="prev" title="Windows和Linux 互传文件">
-                Windows和Linux 互传文件 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -518,7 +533,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-上安装的MySQL重置密码"><span class="nav-number">1.</span> <span class="nav-text">Windows 上安装的MySQL重置密码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-项目-gt-属性-中进行必要的配置"><span class="nav-number">2.</span> <span class="nav-text">在 项目-&gt;属性 中进行必要的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">3.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">4.</span> <span class="nav-text">基本用法</span></a></li></ol></div>
             
 
           </div>

@@ -229,6 +229,180 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/30/Winform-C-使用Mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dengcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Deng Changxing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/30/Winform-C-使用Mysql/" itemprop="url">在Winform C++中使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-30T21:02:35+08:00">
+                2018-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>在VS中使用C++开发Winform<br>使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8<br>当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件<br>因此VS中项目平台也要选择64位：<br><img src="/images/2018113001" alt=""><br>右击选择 属性<br><img src="/images/2018113002" alt=""><br>没有x64平台的话就点击 配置管理器 进行新建</p>
+<h2 id="在-项目-gt-属性-中进行必要的配置"><a href="#在-项目-gt-属性-中进行必要的配置" class="headerlink" title="在 项目-&gt;属性 中进行必要的配置"></a>在 项目-&gt;属性 中进行必要的配置</h2><p><img src="/images/2018113003" alt=""><br>选择 C/C++-&gt;常规，在 附加包含目录中添加 MySQL/include 的路径<br><img src="/images/2018113004" alt=""><br>选择 链接器-&gt;常规 在 附加库目录中添加 MySQL/lib 路径<br><img src="/images/2018113005" alt=""><br>选择 链接器-&gt;输入 在附加依赖项中 输入 libmysql.lib<br><img src="/images/2018113006" alt=""><br>最后从MySQL/lib中取出libmysql.dll放在对应的x64/debug目录下（会有几个x64文件夹，放在.exe文件所在的那个）<br>基本到这里就完成了，不过我运行的时候还是很多莫名的错误：</p>
+<h2 id="错误"><a href="#错误" class="headerlink" title="错误"></a>错误</h2><p>找不到libmysql.dll：<br>    我认为是版本问题，有可能vs识别不了MySQL8，因为我又下载了一个MySQL5，用MySQL5的libmysql.dll覆盖掉之前设置的dll就能运行了。<br>找不到一大堆.lib文件：<br>    是因为平台换到了x64，很多x64的库都找不到。<br>    解决办法是，在c:/Program Files中找到缺少的库文件（要注意是不是x64的），然后在 链接器-&gt;常规-&gt;附加库目录 中添加库文件路径就可以了。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>这是我的一个课程作业，所以只使用了一些基本的用法。<br>首先:</p>
+<pre><code>#include &quot;mysql.h&quot;
+</code></pre><p>然后声明一个MYSQL变量:</p>
+<pre><code>MYSQL mysql = new MYSQL;
+</code></pre><p>然后初始化mysql：</p>
+<pre><code>mysql_init(&amp;mysql);
+</code></pre><p>我在网上看到一篇文章认为，上面声明变量以及初始化时mysql的使用是正确的，相反下面的写法被认为是错误的：</p>
+<pre><code>MYSQL *mysql = new MYSQL;
+mysql_init(mysql);
+</code></pre><p>不过我开发这个winform使用的是托管类,第一种定义方法会报错，我使用了第二种，而且完全能够运行。<br>然后连接:</p>
+<pre><code>if(mysql_real_connect(mysql,host,username,passwd,database,port,NULL,0))
+</code></pre><p>port除非你设置了别的值，否则一般是3306，其余各个变量的意思都很清楚了。连接成功则返回true。<br>设置编码，当然如果你传输的全是ASCII编码字符就可以不设置了，我创建表时没有设置编码，中文默认是GBK：</p>
+<pre><code>mysql_query(mysql,&quot;SET NAMES ’GBK‘&quot;)；
+</code></pre><p>然后执行SQL语句:</p>
+<pre><code>int res = mysql_query(mysql,SQL语句);
+</code></pre><p>如果执行成功返回0，执行失败返回非0<br>查询结果：</p>
+<pre><code>MYSQL_RES * result = mysql_store_result(mysql);
+</code></pre><p>返回的结果是一个MSQL_RES*类型的值，可以直接用if(result)判断是否为空<br>获取结果：</p>
+<pre><code>while(MYSQL_ROW sql_row = mysql_fetch_row(result))
+</code></pre><p>每次执行while循环会返回数据表中的一条记录，可以把sql_row当做数组来使用(sql_row[0],sql_row[1]….)<br>就完了！</p>
+<p>当然还有一些小问题，例如声明变量的时候，如果用上面的方法</p>
+<pre><code>MYSQL *mysql = new MYSQL;
+</code></pre><p>我会出现的错误是：…..内存已损坏……大概就是内存溢出，当我改成:</p>
+<pre><code>MYSQL *mysql = new MYSQL[2];
+</code></pre><p>就不会出现这个问题。<br>还有一个问题就是，当我出现大量调用 创建连接 时，程序也会出现内存溢出的问题，网上一些回答是使用：</p>
+<pre><code>mysql_free_result(result);
+</code></pre><p>来解决，但是对我而言并没有效果，相反还会导致程序莫名退出<br>我的程序需要频繁地建立连接，运行一段时间之后还会报 内存损坏 ，不过现在无端端又好了，软件也靠不住啊~<br>不过还是在网上找了点关于这个问题的说法，大概就是接受的数据太多，处理不来，导致内存堆积，就溢出了….我也不确定<br>不过还是记下一个方法，方便以后查看：</p>
+<pre><code>mysql_close(mysql);
+mysql_library_end();
+</code></pre><p>据说前一步并没有完全释放内存，需要再添加后一条语句才能完全释放。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/23/Windows和Linux-互传文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -326,6 +500,7 @@
 <h2 id="使用XShell6："><a href="#使用XShell6：" class="headerlink" title="使用XShell6："></a>使用XShell6：</h2><p>1.先连接到你的服务器<br>2.点击新建文件传输，也可以之间用ctrl+alt+F，会弹出界面要你下载xftp点击取消就ok了<br><img src="/images/winlinux2.jpg" alt=""><br>这时sftp:后面会有一个目录，就是你账号现在所在的目录，文件会传到这个目录来<br>3.输入lcd，就会弹出一个文件选择界面，选择你将要上传的文件的目录<br><img src="/images/winlinux3.jpg" alt=""><br>4.输入</p>
 <pre><code>put jdk-8u191-linux-x64.rpm
 </code></pre><p>put 后接你要上传的文件名（目录刚才已经选择了），就会将文件put到sftp后面的目录啦<br><img src="/images/winlinux4.jpg" alt=""><br>5.等待！ok</p>
+<h2 id="使用winSCP"><a href="#使用winSCP" class="headerlink" title="使用winSCP"></a>使用winSCP</h2><p>这个操作就很简单了，下载一个winSCP，安装一下<br>选择sFTP文件协议，输入主机、端口、用户、密码<br><img src="/images/winlinux5.jpg" alt=""><br>连接成功后，只要把文件拖来拖去就可以实现上传或者下载了<br><img src="/images/winlinux6.jpg" alt=""></p>
 
           
         
@@ -569,7 +744,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -580,7 +755,7 @@
               
               <div class="site-state-item site-state-categories">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 
               </div>
