@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/images/2018113004.png">
 <meta property="og:image" content="http://yoursite.com/images/2018113005.png">
 <meta property="og:image" content="http://yoursite.com/images/2018113006.png">
-<meta property="og:updated_time" content="2018-11-30T14:54:23.966Z">
+<meta property="og:updated_time" content="2018-12-04T16:26:39.702Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在Winform C++中使用">
 <meta name="twitter:description" content="环境在VS中使用C++开发Winform使用阿里云服务器上搭建的数据库，数据库是64位的MySQL8当然在本地也要下载MySQL，因为需要用到其中的头文件和库文件因此VS中项目平台也要选择64位：右击选择 属性没有x64平台的话就点击 配置管理器 进行新建 在 项目-&amp;gt;属性 中进行必要的配置选择 C/C++-&amp;gt;常规，在 附加包含目录中添加 MySQL/include 的路径选择 链接器">
@@ -371,6 +371,7 @@ mysql_init(mysql);
 <pre><code>mysql_close(mysql);
 mysql_library_end();
 </code></pre><p>据说前一步并没有完全释放内存，需要再添加后一条语句才能完全释放。</p>
+<h2 id="2018-12-5更新"><a href="#2018-12-5更新" class="headerlink" title="2018.12.5更新"></a>2018.12.5更新</h2><p>大量创建连接时，程序出现崩溃的原因终于找到了。<br>并不是网上说的内存堆积问题，而是因为我是使用子线程来进行数据库操作的。<br>我把 MYSQL *mysql 定义为mysqlFunc类的成员变量并在构造函数中进行初始化，操作数据库的方法定义为该类的成员函数。需要操作数据库时，<br>使用子线程调用成员函数。问题就来了，这样的写法导致大量的线程调用同一个变量，一般这种情况下是要加锁的，而我这里并没有这样做，最终<br>导致程序崩溃咯。</p>
 
       
     </div>
@@ -533,7 +534,7 @@ mysql_library_end();
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-项目-gt-属性-中进行必要的配置"><span class="nav-number">2.</span> <span class="nav-text">在 项目-&gt;属性 中进行必要的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">3.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">4.</span> <span class="nav-text">基本用法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-项目-gt-属性-中进行必要的配置"><span class="nav-number">2.</span> <span class="nav-text">在 项目-&gt;属性 中进行必要的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误"><span class="nav-number">3.</span> <span class="nav-text">错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法"><span class="nav-number">4.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2018-12-5更新"><span class="nav-number">5.</span> <span class="nav-text">2018.12.5更新</span></a></li></ol></div>
             
 
           </div>
